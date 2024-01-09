@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="style.css">
     <link
@@ -370,6 +370,7 @@
 
         .fa-chevron-left {
             left: 10px;
+            width: 37.5px;
         }
 
         .container.active {
@@ -404,6 +405,9 @@
         }
 
         @media only screen and (max-width: 768px) {
+            h1{
+                margin-left: 10px;
+            }
             .navbar-container {
                 padding: 0 20px;
                 justify-content: space-between;
@@ -443,6 +447,7 @@
             .featured-content {
                 padding: 20px;
                 /* Adjust padding for smaller screens */
+                height: 280px;
             }
 
             .featured-title {
@@ -454,6 +459,11 @@
             .featured-desc {
                 width: 100%;
                 /* Make the description full width on small screens */
+                font-size: x-small;
+            }
+            .movie-list{
+                height: 120px;
+                padding: 2px;
             }
 
             .movie-list-container {
@@ -477,6 +487,10 @@
                 width: 100%;
                 /* Make these elements full width on small screens */
                 text-align: center;
+            }
+            .movie-list-item-img {
+                width: 150px;
+                height: 100px;
             }
 
             .arrow {
