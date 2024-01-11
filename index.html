@@ -65,7 +65,7 @@
             color: rgb(156, 156, 156);
             text-align: center;
             outline: none;
-            
+
         }
 
 
@@ -141,9 +141,11 @@
         .logo.inverted {
             filter: invert(100%);
         }
-        .mobile-logo.inverted{
+
+        .mobile-logo.inverted {
             filter: invert(100%);
         }
+
         .light-mode {
             display: block;
         }
@@ -253,10 +255,21 @@
             margin-left: 50px;
         }
 
-        .featured-content {
-            height: 50vh;
+        .featured-content-1 {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #151515), url('img/tiger_3_background_2.jpg');
+            height: 400px;
             padding: 50px;
+            background-size: cover;
+            /* opacity: 80%; */
         }
+
+        .featured-content-2 {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #151515), url('img/f-2.jpg');
+            height: 400px;
+            padding: 50px;
+            background-size: cover;
+        }
+        
 
         .featured-title {
             width: 200px;
@@ -264,8 +277,8 @@
 
         .featured-desc {
             width: 500px;
-            color: lightgray;
-            margin: 30px 0;
+            color: white;
+            margin: 15px 0;
         }
 
         .featured-button {
@@ -321,7 +334,7 @@
         }
 
         .movie-list-item-title {
-            background-color: #333;
+            background-color: transparent;
             padding: 0 10px;
             font-size: 32px;
             font-weight: bold;
@@ -333,7 +346,7 @@
         }
 
         .movie-list-item-desc {
-            background-color: #333;
+            background-color: transparent;
             padding: 10px;
             font-size: 14px;
             position: absolute;
@@ -406,12 +419,14 @@
         }
 
         @media only screen and (max-width: 768px) {
-            .sidebar{
+            .sidebar {
                 width: 35px;
             }
-            h1{
+
+            h1 {
                 margin-left: 10px;
             }
+
             .navbar-container {
                 padding: 0 5px;
                 justify-content: space-between;
@@ -448,14 +463,8 @@
                 /* Remove left margin on small screens */
             }
 
-            .featured-content {
-                padding: 20px;
-                /* Adjust padding for smaller screens */
-                height: 280px;
-            }
-
             .featured-title {
-                width: 100%;
+                width: 50%;
                 /* Make the title full width on small screens */
                 text-align: center;
             }
@@ -465,7 +474,23 @@
                 /* Make the description full width on small screens */
                 font-size: x-small;
             }
-            .movie-list{
+
+            .featured-content-1 {
+                background-size: cover;
+                padding: 20px;
+                /* Adjust padding for smaller screens */
+                height: 200px;
+            }
+
+            .featured-content-2 {
+                background-size: contain;
+                padding: 20px;
+                /* Adjust padding for smaller screens */
+                height: 200px;
+
+            }
+
+            .movie-list {
                 height: 120px;
                 padding: 2px;
             }
@@ -478,6 +503,7 @@
             .movie-list-wrapper {
                 padding: 0 10px;
                 /* Adjust padding for smaller screens */
+                overflow-x: scroll;
             }
 
             .movie-list-item {
@@ -485,13 +511,14 @@
                 /* Adjust margin for smaller screens */
             }
 
-            .movie-list-item-title{
+            .movie-list-item-title {
                 width: auto;
                 font-size: x-small;
-                left: 35px;
+                left: 20px;
                 top: -7%;
             }
-            .movie-list-item-desc{
+
+            .movie-list-item-desc {
                 width: 70%;
                 font-size: x-small;
                 /* Make these elements full width on small screens */
@@ -500,23 +527,26 @@
                 left: 20px;
                 top: 7%;
             }
+
             .movie-list-item-button {
                 size: 30px;
                 bottom: -6px;
                 left: 70px;
 
             }
+
             .movie-list-item-img {
                 width: 150px;
                 height: 100px;
             }
 
             .arrow {
-                font-size: 60px;
+                /* font-size: 60px; */
                 /* Adjust arrow size for smaller screens */
-                top: 50%;
+                /* top: 50%; */
                 /* Center the arrow vertically */
-                transform: translateY(-50%);
+                /* transform: translateY(-50%); */
+                display: none;
             }
         }
     </style>
@@ -552,12 +582,16 @@
     </div>
     <div class="container">
         <div class="content-container">
-            <div class="featured-content"
-                style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/f-1.jpg');">
-                <img class="featured-title" src="img/f-t-1.png" alt="">
-                <p class="featured-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto illo dolor
-                    deserunt nam assumenda ipsa eligendi dolore, ipsum id fugiat quo enim impedit, laboriosam omnis
-                    minima voluptatibus incidunt. Accusamus, provident.</p>
+            <div class="featured-content-1">
+                <img class="featured-title" src="img/tiger_3_logo.png" alt="">
+                <p class="featured-desc">Tiger 3 is a 2023 Indian action-thriller movie. 
+                    It is the sequel to Ek Tha Tiger (2012) and Tiger Zinda Hai (2015). 
+                    The movie stars Salman Khan, Katrina Kaif, and Emraan Hashmi.
+                    In the movie, Tiger (Salman Khan) and his partner Zoya (Katrina Kaif) 
+                    must stop a rogue ISI agent, Aatish Rehman (Emraan Hashmi), from staging 
+                    a coup against the Government of Pakistan. Aatish issues an ultimatum to 
+                    Tiger and Zoya: comply with his demands or risk losing their son to a brutal fate.
+                </p><a href="https://cinewavebyuvesh.netlify.app/bollywood/tiger-3-2023"></a>
                 <button class="featured-button">WATCH</button>
             </div>
             <div class="movie-list-container" id="movieListContainer1">
@@ -677,8 +711,7 @@
                     <i class="fas fa-chevron-right arrow"></i>
                 </div>
             </div>
-            <div class="featured-content"
-                style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/f-2.jpg');">
+            <div class="featured-content-2">
                 <img class="featured-title" src="img/f-t-2.png" alt="">
                 <p class="featured-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto illo dolor
                     deserunt nam assumenda ipsa eligendi dolore, ipsum id fugiat quo enim impedit, laboriosam omnis
@@ -807,39 +840,39 @@
 
 </html>
 <script>
-   const movieListContainers = document.querySelectorAll(".movie-list-container");
+    const movieListContainers = document.querySelectorAll(".movie-list-container");
 
-movieListContainers.forEach(container => {
-    const arrows = container.querySelectorAll(".arrow");
-    const movieList = container.querySelector(".movie-list");
+    movieListContainers.forEach(container => {
+        const arrows = container.querySelectorAll(".arrow");
+        const movieList = container.querySelector(".movie-list");
 
-    const itemWidth = 300; // Adjust this value based on your item width
-    const itemsPerRow = Math.floor(window.innerWidth / itemWidth);
-    const totalItems = movieList.querySelectorAll(".movie-list-item").length;
-    const rows = Math.ceil(totalItems / itemsPerRow);
+        const itemWidth = 300; // Adjust this value based on your item width
+        const itemsPerRow = Math.floor(window.innerWidth / itemWidth);
+        const totalItems = movieList.querySelectorAll(".movie-list-item").length;
+        const rows = Math.ceil(totalItems / itemsPerRow);
 
-    let currentRow = 0;
+        let currentRow = 0;
 
-    arrows.forEach(arrow => {
-        arrow.addEventListener("click", () => {
-            if (arrow.classList.contains("fa-chevron-right")) {
-                // Right arrow clicked
-                if (currentRow < rows - 1) {
-                    currentRow++;
+        arrows.forEach(arrow => {
+            arrow.addEventListener("click", () => {
+                if (arrow.classList.contains("fa-chevron-right")) {
+                    // Right arrow clicked
+                    if (currentRow < rows - 1) {
+                        currentRow++;
+                    }
+                } else if (arrow.classList.contains("fa-chevron-left")) {
+                    // Left arrow clicked
+                    if (currentRow > 0) {
+                        currentRow--;
+                    }
                 }
-            } else if (arrow.classList.contains("fa-chevron-left")) {
-                // Left arrow clicked
-                if (currentRow > 0) {
-                    currentRow--;
-                }
-            }
 
-            const transformValue = -currentRow * itemsPerRow * itemWidth;
-            movieList.style.transform = `translateX(${transformValue}px)`;
+                const transformValue = -currentRow * itemsPerRow * itemWidth;
+                movieList.style.transform = `translateX(${transformValue}px)`;
+            });
         });
     });
-});
-    
+
     const ball = document.querySelector(".toggle-ball");
     const items = document.querySelectorAll(".container, .movie-list-title, .navbar-container, .sidebar, .left-menu-icon, .toggle");
     const immediateTransitionItems = document.querySelectorAll(".menu-list-item, .profile-text, .search-icon");
