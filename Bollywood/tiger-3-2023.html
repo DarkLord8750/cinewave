@@ -1,0 +1,688 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>CineWave</title>
+    <link rel="shortcut icon" href="img/cinema_logo.png">
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+        }
+
+        * {
+            margin: 0;
+
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            position: sticky;
+            top: 0;
+            transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+        }
+
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            padding: 0 50px;
+            height: 100%;
+            color: white;
+            font-family: "Sen", sans-serif;
+            transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+        }
+
+        .navbar {
+            transition: color 0.5s ease-in-out;
+
+        }
+
+        .search-container {
+            align-items: center;
+            margin-left: 165px;
+
+        }
+
+        .search-bar {
+            background-color: transparent;
+            border: none;
+            color: rgb(156, 156, 156);
+            text-align: center;
+            outline: none;
+
+        }
+
+
+        .search-btn {
+            padding: 8px 15px;
+            background-color: transparent;
+            /* Add your desired background color here */
+            color: #4dbf00;
+            /* Add your desired text color here */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            /* Add transition for smooth effect */
+        }
+
+
+        .menu-list-item {
+            margin-right: 30px;
+            transition: color 0.1s ease-in-out;
+        }
+
+        .menu-list-item:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .menu-list-item:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .menu-list-item:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .menu-list-item:nth-child(4) {
+            transition-delay: 0.25s;
+        }
+
+        .menu-list-item:nth-child(5) {
+            transition-delay: 0.3s;
+        }
+
+        .profile-container {
+            transition: color 0.1s ease-in-out;
+        }
+
+        .search-container {
+            transition: color 0.1s ease-in-out;
+        }
+
+        .toggle-icon,
+        .search-icon {
+            transition: color 0.1s ease-in-out;
+        }
+
+
+        .logo-container {
+            flex: 1;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+
+        }
+
+        .mobile-logo {
+            width: 27px;
+            height: 25px;
+            display: none;
+        }
+
+        .logo.inverted {
+            filter: invert(100%);
+        }
+
+        .mobile-logo.inverted {
+            filter: invert(100%);
+        }
+
+        .light-mode {
+            display: block;
+        }
+
+        .dark-mode {
+            display: block;
+        }
+
+
+
+        .menu-container {
+            flex: 6;
+        }
+
+        .menu-list {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu-list-item {
+            margin-right: 30px;
+        }
+
+        .menu-list-item.active {
+            font-weight: bold;
+        }
+
+        .profile-container {
+            flex: 2;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-right: 10px;
+        }
+
+        .profile-text-container {
+            margin: 0 20px;
+        }
+
+        .profile-picture {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .toggle {
+            width: 40px;
+            height: 20px;
+            background-color: white;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .toggle-icon {
+            color: goldenrod;
+        }
+
+        .toggle-ball {
+            width: 18px;
+            height: 18px;
+            background-color: black;
+            position: absolute;
+            right: 1px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 1s ease all;
+        }
+
+        .sidebar {
+            width: 50px;
+            height: 100%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 60px;
+            transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+        }
+
+
+        .left-menu-icon {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        .left-menu-icon:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            color: #8a8a8a;
+        }
+
+        .container {
+            background-color: #151515;
+            min-height: calc(100vh - 50px);
+            color: white;
+        }
+
+        .content-container {
+            margin-left: 50px;
+        }
+
+        .featured-content-1 {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #151515), url('img/tiger_3_background.jpg');
+            height: 400px;
+            padding: 50px;
+            background-size: cover;
+            /* opacity: 80%; */
+        }
+
+        .featured-title {
+            width: 200px;
+            margin-top: 258px;
+        }
+
+        .featured-desc {
+            width: 600px;
+            margin: 15px 0;
+        }
+
+        .featured-desc.active {
+            color: black;
+        }
+
+        .featured-button {
+            background-color: #4dbf00;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            font-weight: bold;
+        }
+
+        .movie-container {
+            padding: 0 48px;
+        }
+
+        .container.active {
+            background-color: white;
+        }
+
+        .movie-info {
+            color: white;
+        }
+
+        .container.active .movie-info-title {
+            color: black;
+        }
+
+        .container.active .movie-info {
+            color: black;
+        }
+
+        .movie-info-title.active {
+            color: black;
+        }
+
+        .movie-info.active {
+            color: white;
+        }
+
+        .navbar-container.active {
+            background-color: white;
+
+            color: black;
+        }
+
+        .sidebar.active {
+            background-color: white;
+        }
+
+        .left-menu-icon.active {
+            color: black;
+        }
+
+        .toggle.active {
+            background-color: black;
+        }
+
+        .toggle-ball.active {
+            background-color: white;
+            transform: translateX(-20px);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        h2.active {
+            color: black;
+
+
+        }
+
+        .screenshot-image {
+            align-items: center;
+            text-align: center;
+        }
+
+        .ss {
+            margin-bottom: 20px;
+            max-width: 100%;
+            padding: 0px 100px;
+        }
+
+        .btn {
+            text-align: center;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .download-btn {
+
+            padding: 20px 20px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .download-btn {
+            font-size: 1em;
+            padding: 10px 10px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background-color: #4dbf00;
+            border-radius: 8px;
+        }
+
+        .download-btn:hover {
+            background-color: #286400;
+        }
+
+        .download-btn:active {
+            background-color: #ffffff;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+            color: #286400;
+            border: #286400;
+            border: 2px solid;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            margin-left: 50px;
+            width: auto;
+        }
+
+        /* Optional: Style for copyright text */
+        footer p {
+            margin: 0;
+        }
+        footer.active {
+    background-color: white;
+    color: black;
+}
+
+        @media only screen and (max-width: 768px) {
+            footer{
+                margin-left: 35px;
+                width: auto;
+            }
+            .sidebar {
+                width: 35px;
+            }
+
+            h1 {
+                margin-left: 10px;
+            }
+
+            .navbar-container {
+                padding: 0 5px;
+                justify-content: space-between;
+            }
+
+            .search-container {
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+            }
+
+            .search-bar {
+                width: 175px;
+                /* Adjust the width as needed */
+                margin: 5px 0;
+                margin-left: 5px;
+            }
+
+            .search-btn {
+                padding: 5px 10px;
+            }
+
+            .menu-container {
+                display: none;
+            }
+
+            /* Additional styles for better responsiveness on Android devices */
+            .container {
+                padding: 0 5px;
+            }
+
+            .content-container {
+                margin-left: 30;
+                /* Remove left margin on small screens */
+            }
+
+            .featured-title {
+                width: 50%;
+                /* Make the title full width on small screens */
+                text-align: center;
+                margin-top: 99px;
+            }
+
+            .featured-desc {
+                width: 100%;
+                /* Make the description full width on small screens */
+                font-size: xx-small;
+            }
+
+            .featured-content-1 {
+                background-size: cover;
+                padding: 20px;
+                /* Adjust padding for smaller screens */
+                height: 200px;
+            }
+
+            .featured-content-2 {
+                background-size: contain;
+                padding: 20px;
+                /* Adjust padding for smaller screens */
+                height: 200px;
+
+            }
+
+            h1 {
+                margin-left: -30px;
+                margin-top: 5px;
+            }
+
+            .movie-info {
+                margin-left: -30px;
+            }
+
+            h2 {
+                text-align: center;
+                font-size: 40px;
+            }
+
+            .screenshot-image {
+                align-items: center;
+                text-align: center;
+            }
+
+            .ss {
+                margin-top: 20px;
+                width: 60%;
+                height: 100px;
+                max-width: 100%;
+                padding: 0px 0px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <i class="left-menu-icon fas fa-home" class="here"></i>
+        <i class="left-menu-icon fas fa-tv"></i>
+        <i class="left-menu-icon fas fa-film"></i>
+        <i class="left-menu-icon fas fa-chart-line"></i>
+        <i class="left-menu-icon fas fa-fire"></i>
+    </div>
+
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <img src="img/cinewave_logo_light.png" alt="CineWave" class="logo">
+                <img src="img/cinewave_logo.png" alt="CineWave Mobile" class="mobile-logo">
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search (e.g. Tiger 3)">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="toggle">
+                <i class="fas fa-moon toggle-icon"></i>
+                <i class="fas fa-sun toggle-icon"></i>
+                <div class="toggle-ball"></div>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="img/profile.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content-container">
+            <div class="featured-content-1">
+                <img class="featured-title" src="img/tiger_3_logo.png" alt="">
+                <p class="featured-desc">Tiger 3 is a 2023 Indian action-thriller movie.
+                    It is the sequel to Ek Tha Tiger (2012) and Tiger Zinda Hai (2015).
+                    The movie stars Salman Khan, Katrina Kaif, and Emraan Hashmi.
+                    In the movie, Tiger (Salman Khan) and his partner Zoya (Katrina Kaif)
+                    must stop a rogue ISI agent, Aatish Rehman (Emraan Hashmi), from staging
+                    a coup against the Government of Pakistan. Aatish issues an ultimatum to
+                    Tiger and Zoya: comply with his demands or risk losing their son to a brutal fate.
+                </p>
+            </div>
+            <div class="movie-container">
+                <h1 class="movie-info-title">Movie Info</h1>
+                <div class="movie-info">
+                    <p><strong>Genre: </strong><a>Action</a>,
+                        <a>Adventure</a>,
+                        <a>Bollywood Movies</a>,
+                        <a>Bollywood Movies 2023</a>,
+                        <a>Thriller</a>
+                    </p>
+                    <p><strong>Director: </strong><span><a>Maneesh Sharma</a></span>
+                    </p>
+                    <p><strong>Actors: </strong><span><a>Salman Khan</a>,
+                            <a>Katrina Kaif</a>,
+                            <a>Emraan Hashmi</a>,
+                            <a>Kumud Mishra</a>,
+                            <a>Revathi</a>,
+                            <a>Sartaaj Kakkar</a></span>
+                    </p>
+                    <p>
+                        <strong>Country: </strong><a>India</a>
+                    </p>
+                    <p><strong>Duration:</strong> <span itemprop="duration">153 min</span></p>
+                    <p><strong>Quality: </strong> <span class="quality">WebRip</span></p>
+                    <p><strong>Release: </strong> <a>2023</a></p>
+                </div>
+            </div>
+            <div class="movie-screenshot">
+                <h2>Screenshot</h2>
+                <div class="screenshot-image">
+                    <img src="img/1.jpg" alt="first Screenshot" class="ss">
+                    <img src="img/2.jpg" alt="second Screenshot" class="ss">
+                    <img src="img/3.jpg" alt="third Screenshot" class="ss">
+                </div>
+            </div>
+            <div class="btn">
+                <button class="download-btn">Download</button>
+
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 CineWave. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
+<script>
+    const ball = document.querySelector(".toggle-ball");
+    const items = document.querySelectorAll(".container, .movie-info-title, .movie-info, .navbar-container, .sidebar, .left-menu-icon, .toggle, .movie-info, h2, footer");
+    const immediateTransitionItems = document.querySelectorAll(".menu-list-item, .profile-text, .search-icon");
+    const logo = document.querySelector('.logo');
+    const mobileLogo = document.querySelector('.mobile-logo');
+
+    function toggleDarkMode() {
+        items.forEach((item) => {
+            item.classList.toggle("active");
+        });
+
+        ball.classList.toggle("active");
+
+        // Toggle between light and dark mode logos
+        if (ball.classList.contains('active')) {
+            logo.classList.add('inverted');
+            mobileLogo.classList.add('inverted');
+        } else {
+            logo.classList.remove('inverted');
+            mobileLogo.classList.remove('inverted');
+        }
+
+        // Add immediate transition to specific items
+        immediateTransitionItems.forEach(item => {
+            item.classList.toggle("active", ball.classList.contains("active"));
+        });
+    }
+
+    ball.addEventListener("click", toggleDarkMode);
+
+    // Call toggleLogo on page load and when the window is resized
+    function toggleLogo() {
+        const logo = document.querySelector('.logo');
+        const mobileLogo = document.querySelector('.mobile-logo');
+
+        if (isSmartphone()) {
+            logo.style.display = 'none';
+            mobileLogo.style.display = 'block';
+        } else {
+            logo.style.display = 'block';
+            mobileLogo.style.display = 'none';
+        }
+
+        // Toggle between light and dark mode logos
+        if (ball.classList.contains('active')) {
+            logo.classList.add('inverted');
+            mobileLogo.classList.add('inverted');
+            
+        } else {
+            logo.classList.remove('inverted');
+            mobileLogo.classList.remove('inverted');
+        }
+    }
+
+    // Initial logo toggle on page load
+    toggleLogo();
+
+    // Add an event listener to handle logo changes on window resize
+    window.addEventListener('resize', toggleLogo);
+
+    // Function to check if the device is a smartphone
+    function isSmartphone() {
+        return window.innerWidth <= 768;
+    }
+</script>
