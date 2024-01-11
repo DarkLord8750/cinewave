@@ -574,8 +574,17 @@
                 <img src="img/cinewave_logo.png" alt="CineWave Mobile" class="mobile-logo">
             </div>
             <div class="search-container">
-                <input type="text" class="search-bar" placeholder="Search (e.g. Tiger 3)">
-                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <form action="/search" method="get">
+                    <input type="text" name="query" class="search-bar" placeholder="Search (e.g. Tiger 3)">
+                    <button class="search-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-search">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </form>
             </div>
             <div class="toggle">
                 <i class="fas fa-moon toggle-icon"></i>
